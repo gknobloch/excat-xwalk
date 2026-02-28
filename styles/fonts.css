@@ -1,5 +1,21 @@
 /* stylelint-disable max-line-length */
 @font-face {
+  font-family: GenosGFG;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/GenosGFG-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: GenosGFG;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/GenosGFG-Bold.woff2') format('woff2');
+}
+
+@font-face {
   font-family: roboto-condensed;
   font-style: normal;
   font-weight: 700;

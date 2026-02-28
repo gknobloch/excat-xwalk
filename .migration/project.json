@@ -1,4 +1,9 @@
 {
   "type": "xwalk",
-  "contentHostUrl": "author-p186452-e1953772.adobeaemcloud.com"
+  "contentHostUrl": "author-p186452-e1953772.adobeaemcloud.com",
+  "aemSitePath": "/content/excat-xwalk",
+  "aemAssetsFolderPath": "/content/dam/excat-xwalk",
+  "aemSiteName": "excat-xwalk",
+  "aemSiteTitle": "Excat xWalk",
+  "baseUrl": "https://www.volksbank-freiburg.de/"
 }
