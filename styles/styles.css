@@ -11,18 +11,22 @@
  */
 
 :root {
+  /* Volksbank brand colors */
+  --vb-dark-blue: #002d67;
+  --vb-blue: #0066b3;
+
   /* colors */
-  --background-color: white;
+  --background-color: #fff;
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
-  --overlay-background-color:lightgrey;
+  --link-color: var(--vb-blue);
+  --link-hover-color: var(--vb-dark-blue);
+  --overlay-background-color: lightgrey;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: 'GenosGFG', roboto, roboto-fallback, sans-serif;
+  --heading-font-family: 'GenosGFG', roboto-condensed, roboto-condensed-fallback, sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -37,8 +41,11 @@
   --heading-font-size-s: 24px;
   --heading-font-size-xs: 22px;
 
+  /* button border-radius */
+  --button-border-radius: 2.4em;
+
   /* nav heights */
-  --nav-height: 64px;
+  --nav-height: 100px;
   --breadcrumbs-height: 34px;
   --header-height: var(--nav-height);
 }
@@ -247,8 +254,23 @@ main > .section > div {
   padding: 0 24px;
 }
 
+/* Carousel section heading — centered */
+main > .section > .default-content-wrapper > h2:only-child {
+  text-align: center;
+}
+
+/* "Immer an Ihrer Seite" intro section */
+main > .section > .default-content-wrapper > h2 + h3 {
+  font-weight: 400;
+  color: var(--dark-color);
+  font-size: var(--body-font-size-m);
+  margin-bottom: 32px;
+}
+
+/* Hero — image on top, content below */
 main > .section:first-of-type {
-  margin-top: 0;
+  margin: 0;
+  padding: 0;
 }
 
 @media (width >= 900px) {
@@ -264,3 +286,92 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+main > .section:first-of-type > .default-content-wrapper {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero banner image — full-width */
+main > .section:first-of-type > .default-content-wrapper > p:first-child {
+  margin: 0;
+  line-height: 0;
+}
+
+main > .section:first-of-type > .default-content-wrapper > p:first-child picture,
+main > .section:first-of-type > .default-content-wrapper > p:first-child img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 5 / 2;
+  object-fit: cover;
+}
+
+/* easyCredit logo below image */
+main > .section:first-of-type > .default-content-wrapper > p:nth-child(2) img {
+  max-width: 120px;
+  display: block;
+  margin: 32px auto 16px;
+}
+
+/* Hero heading */
+main > .section:first-of-type > .default-content-wrapper h1 {
+  color: var(--vb-dark-blue);
+  text-align: center;
+  max-width: 700px;
+  margin: 16px auto;
+  padding: 0 24px;
+  font-size: var(--heading-font-size-l);
+}
+
+/* Hero description text */
+main > .section:first-of-type > .default-content-wrapper > p:nth-child(4) {
+  color: var(--dark-color);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 24px;
+  padding: 0 24px;
+  font-size: var(--body-font-size-s);
+}
+
+/* Hero CTA button — centered */
+main > .section:first-of-type > .default-content-wrapper > .button-container {
+  text-align: center;
+}
+
+main > .section:first-of-type > .default-content-wrapper > .button-container a.button {
+  background-color: var(--vb-blue);
+  color: #fff;
+  border: none;
+  padding: 12px 32px;
+  font-size: var(--body-font-size-s);
+}
+
+/* "Unsere aktuellen Themen" heading below hero */
+main > .section:first-of-type > .default-content-wrapper > h2:last-child {
+  color: var(--text-color);
+  text-align: center;
+  margin-top: 48px;
+  padding: 0 24px;
+  font-size: var(--heading-font-size-l);
+}
+
+/* CTA section — "Wir sind für Sie da" */
+main .section.cta-section {
+  background-color: var(--light-color);
+  margin: 0;
+  padding: 48px 24px;
+}
+
+main .section.cta-section .default-content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+main .section.cta-section .default-content-wrapper > h2:first-child {
+  text-align: center;
+  font-size: var(--heading-font-size-xl);
+  margin-bottom: 32px;
+}
+
+/* CTA cards grid styles moved to blocks/cta-cards-grid/cta-cards-grid.css */
