@@ -138,7 +138,9 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Cards Teaser Item",
-                  "model": "cards-teaser-item"
+                  "model": "cards-teaser-item",
+                  "content_title": "Card Title",
+                  "content_description": "<p>Card description</p>"
                 }
               }
             }

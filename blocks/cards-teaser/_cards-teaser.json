@@ -24,7 +24,9 @@
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
               "name": "Cards Teaser Item",
-              "model": "cards-teaser-item"
+              "model": "cards-teaser-item",
+              "content_title": "Card Title",
+              "content_description": "<p>Card description</p>"
             }
           }
         }
@@ -38,16 +40,37 @@
         {
           "component": "reference",
           "valueType": "string",
-          "name": "image",
-          "label": "Image",
+          "name": "media_image",
+          "label": "Card Image",
           "multi": false
         },
         {
+          "component": "text",
+          "valueType": "string",
+          "name": "media_imageAlt",
+          "label": "Image Alt Text",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "content_title",
+          "label": "Title",
+          "value": ""
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "content_titleLink",
+          "label": "Title Link",
+          "value": ""
+        },
+        {
           "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Text",
-          "valueType": "string"
+          "valueType": "string",
+          "name": "content_description",
+          "label": "Description",
+          "value": ""
         }
       ]
     }
