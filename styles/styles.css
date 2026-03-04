@@ -373,5 +373,3 @@ main .section.cta-section .default-content-wrapper > h2:first-child {
   font-size: var(--heading-font-size-xl);
   margin-bottom: 32px;
 }
-
-/* CTA cards grid styles moved to blocks/cta-cards-grid/cta-cards-grid.css */
