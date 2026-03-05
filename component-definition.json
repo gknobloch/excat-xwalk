@@ -108,7 +108,7 @@
                   "name": "Accordion Item",
                   "model": "accordion-item",
                   "summary": "Lorem Ipsum",
-                  "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur volutpat consequat dui, sit amet ...</p>"
+                  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur volutpat consequat dui, sit amet ..."
                 }
               }
             }
@@ -138,7 +138,9 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Cards Teaser Item",
-                  "model": "cards-teaser-item"
+                  "model": "cards-teaser-item",
+                  "content_title": "Card Title",
+                  "content_description": "Card description"
                 }
               }
             }
