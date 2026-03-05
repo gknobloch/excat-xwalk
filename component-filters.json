@@ -34,6 +34,12 @@
     ]
   },
   {
+    "id": "cards-teaser",
+    "components": [
+      "cards-teaser-item"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"

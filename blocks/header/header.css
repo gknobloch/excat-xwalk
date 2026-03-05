@@ -31,12 +31,18 @@ header nav[aria-expanded='true'] {
 }
 
 @media (width >= 900px) {
+  header .nav-wrapper {
+    background-color: transparent;
+  }
+
   header nav {
     display: flex;
-    justify-content: space-between;
-    gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0;
+    max-width: 100%;
+    padding: 0;
+    height: auto;
   }
 
   header nav[aria-expanded='true'] {
@@ -182,10 +188,23 @@ header nav .nav-sections ul > li > ul > li {
 }
 
 @media (width >= 900px) {
+  /* Top bar: dark blue with white nav links */
   header nav .nav-sections {
     display: block;
     visibility: visible;
     white-space: nowrap;
+    order: -1;
+    width: 100%;
+    flex-basis: 100%;
+    background-color: var(--vb-dark-blue);
+    color: #fff;
+    font-size: var(--body-font-size-xs);
+  }
+
+  header nav .nav-sections .default-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
   }
 
   header nav[aria-expanded='true'] .nav-sections {
@@ -222,6 +241,7 @@ header nav .nav-sections ul > li > ul > li {
     display: flex;
     gap: 24px;
     margin: 0;
+    padding: 12px 0;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {
@@ -261,19 +281,44 @@ header nav .nav-sections ul > li > ul > li {
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     padding: 8px 0;
   }
+
+  /* Bottom bar: white with logo left, login right */
+  header .nav-brand {
+    flex-basis: auto;
+    padding: 12px 0 12px 32px;
+    max-width: 1200px;
+  }
+
+  header nav .nav-brand img {
+    width: 180px;
+    height: auto;
+  }
+
+  header nav .nav-tools {
+    margin-left: auto;
+    padding-right: 32px;
+  }
+
+  header nav .nav-tools .button {
+    background-color: var(--vb-blue);
+    color: #fff;
+    border-radius: 24px;
+    padding: 10px 32px;
+    font-size: var(--body-font-size-s);
+    font-weight: 500;
+    line-height: 1.25;
+    margin: 0;
+    border: none;
+  }
+
+  header nav .nav-tools .button:hover {
+    background-color: var(--vb-dark-blue);
+  }
 }
 
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
-}
-
-header nav .nav-tools .button {
-  margin: 0;
-  border: none;
-  padding: 0.5em;
-  background: none;
-  line-height: 0;
 }
 
 /* breadcrumbs */
