@@ -16,17 +16,15 @@
       }
     },
     {
-      "title": "Cards Teaser Item",
+      "title": "Card",
       "id": "cards-teaser-item",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
-              "name": "Cards Teaser Item",
-              "model": "cards-teaser-item",
-              "content_title": "Card Title",
-              "content_description": "Card description"
+              "name": "Card",
+              "model": "cards-teaser-item"
             }
           }
         }
@@ -47,13 +45,6 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "media_imageAlt",
-          "label": "Image Alt Text",
-          "value": ""
-        },
-        {
-          "component": "text",
-          "valueType": "string",
           "name": "content_title",
           "label": "Title",
           "value": ""
@@ -61,8 +52,8 @@
         {
           "component": "aem-content",
           "valueType": "string",
-          "name": "content_titleLink",
-          "label": "Title Link",
+          "name": "content_link",
+          "label": "Link",
           "value": ""
         },
         {

@@ -173,13 +173,6 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "media_imageAlt",
-        "label": "Image Alt Text",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "string",
         "name": "content_title",
         "label": "Title",
         "value": ""
@@ -187,8 +180,8 @@
       {
         "component": "aem-content",
         "valueType": "string",
-        "name": "content_titleLink",
-        "label": "Title Link",
+        "name": "content_link",
+        "label": "Link",
         "value": ""
       },
       {

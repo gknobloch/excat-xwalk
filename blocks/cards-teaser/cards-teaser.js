@@ -62,6 +62,30 @@ export default function decorate(block) {
         div.className = 'cards-teaser-card-image cards-teaser-no-image';
       } else {
         div.className = 'cards-teaser-card-body';
+        // Transform xwalk flat field output into semantic HTML.
+        // xwalk renders: <p>title</p> <p><a href="path">path</a></p> <p>desc</p>
+        // We need:       <h2><a href="path">title</a></h2> <p>desc</p>
+        if (!div.querySelector('h2')) {
+          const children = [...div.children];
+          if (children.length >= 2) {
+            const titleP = children[0];
+            const linkP = children[1];
+            const link = linkP.querySelector('a');
+            const h2 = document.createElement('h2');
+            if (link) {
+              const a = document.createElement('a');
+              a.href = link.href;
+              a.textContent = titleP.textContent;
+              h2.append(a);
+              titleP.remove();
+              linkP.remove();
+            } else {
+              h2.textContent = titleP.textContent;
+              titleP.remove();
+            }
+            div.prepend(h2);
+          }
+        }
       }
     });
     ul.append(li);
