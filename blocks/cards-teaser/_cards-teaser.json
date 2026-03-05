@@ -43,25 +43,10 @@
           "multi": false
         },
         {
-          "component": "text",
-          "valueType": "string",
-          "name": "content_title",
-          "label": "Title",
-          "value": ""
-        },
-        {
           "component": "aem-content",
           "valueType": "string",
-          "name": "content_link",
-          "label": "Link",
-          "value": ""
-        },
-        {
-          "component": "richtext",
-          "valueType": "string",
-          "name": "content_description",
-          "label": "Description",
-          "value": ""
+          "name": "content_titleLink",
+          "label": "Card Content"
         }
       ]
     }
