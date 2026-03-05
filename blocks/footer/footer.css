@@ -146,6 +146,16 @@ footer .footer-partners p:last-child {
   align-items: center;
   justify-content: center;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  align-items: center;
+}
+
+footer .footer > div > .section:last-child .default-content-wrapper > p:last-child img {
+  height: 32px;
+  width: auto;
 }
 
 footer .footer-partners img {
