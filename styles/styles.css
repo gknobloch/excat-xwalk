@@ -12,19 +12,21 @@
 
 :root {
   /* Volksbank brand colors */
-  --vb-blue: #0066b3;
   --vb-dark-blue: #002d67;
-  --background-color: white;
-  --light-color: #f5f5f5;
+  --vb-blue: #0066b3;
+
+  /* colors */
+  --background-color: #fff;
+  --light-color: #f8f8f8;
   --dark-color: #505050;
-  --text-color: #222;
+  --text-color: #131313;
   --link-color: var(--vb-blue);
   --link-hover-color: var(--vb-dark-blue);
   --overlay-background-color: lightgrey;
 
   /* fonts */
-  --body-font-family: genosgfg, arial, sans-serif;
-  --heading-font-family: genosgfg, arial, sans-serif;
+  --body-font-family: 'GenosGFG', roboto, roboto-fallback, sans-serif;
+  --heading-font-family: 'GenosGFG', roboto-condensed, roboto-condensed-fallback, sans-serif;
 
   /* body sizes */
   --body-font-size-m: 18px;
@@ -39,9 +41,11 @@
   --heading-font-size-s: 20px;
   --heading-font-size-xs: 18px;
 
+  /* button border-radius */
+  --button-border-radius: 2.4em;
+
   /* nav heights */
-  --nav-height: 64px;
-  --nav-sections-height: 44px;
+  --nav-height: 100px;
   --breadcrumbs-height: 34px;
   --header-height: var(--nav-height);
 }
@@ -228,8 +232,23 @@ main > .section > div {
   padding: 0 24px;
 }
 
+/* Carousel section heading — centered */
+main > .section > .default-content-wrapper > h2:only-child {
+  text-align: center;
+}
+
+/* "Immer an Ihrer Seite" intro section */
+main > .section > .default-content-wrapper > h2 + h3 {
+  font-weight: 400;
+  color: var(--dark-color);
+  font-size: var(--body-font-size-m);
+  margin-bottom: 32px;
+}
+
+/* Hero — image on top, content below */
 main > .section:first-of-type {
-  margin-top: 0;
+  margin: 0;
+  padding: 0;
 }
 
 @media (width >= 900px) {
@@ -246,59 +265,93 @@ main .section.highlight {
   padding: 40px 0;
 }
 
-/* Hero section — full-width image with text aligned to page grid */
 main > .section:first-of-type > .default-content-wrapper {
-  position: relative;
-  max-width: 100%;
+  max-width: none;
+  margin: 0;
   padding: 0;
 }
 
+/* Hero banner image — full-width */
 main > .section:first-of-type > .default-content-wrapper > p:first-child {
   margin: 0;
   line-height: 0;
 }
 
+main > .section:first-of-type > .default-content-wrapper > p:first-child picture,
 main > .section:first-of-type > .default-content-wrapper > p:first-child img {
   width: 100%;
-  height: auto;
-  max-height: 500px;
-  object-fit: cover;
   display: block;
+  aspect-ratio: 5 / 2;
+  object-fit: cover;
 }
 
-/* Align hero text content centered */
-main > .section:first-of-type > .default-content-wrapper > p:not(:first-child),
-main > .section:first-of-type > .default-content-wrapper > h1,
-main > .section:first-of-type > .default-content-wrapper > h2 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 32px;
-  padding-right: 32px;
-  text-align: center;
-}
-
+/* easyCredit logo below image */
 main > .section:first-of-type > .default-content-wrapper > p:nth-child(2) img {
-  height: 60px;
-  width: auto;
+  max-width: 120px;
+  display: block;
+  margin: 32px auto 16px;
 }
 
-main > .section:first-of-type > .default-content-wrapper > h1 {
+/* Hero heading */
+main > .section:first-of-type > .default-content-wrapper h1 {
   color: var(--vb-dark-blue);
+  text-align: center;
+  max-width: 700px;
+  margin: 16px auto;
+  padding: 0 24px;
+  font-size: var(--heading-font-size-l);
 }
 
-main > .section:first-of-type > .default-content-wrapper > h2 {
-  color: var(--vb-dark-blue);
-  margin-top: 48px;
+/* Hero description text */
+main > .section:first-of-type > .default-content-wrapper > p:nth-child(4) {
+  color: var(--dark-color);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 24px;
+  padding: 0 24px;
+  font-size: var(--body-font-size-s);
 }
 
-/* Section headings centered */
-/* stylelint-disable-next-line no-descending-specificity */
-main > .section > .default-content-wrapper {
+/* Hero CTA button — centered */
+main > .section:first-of-type > .default-content-wrapper > .button-container {
   text-align: center;
 }
 
-/* CTA section — styled cards */
+main > .section:first-of-type > .default-content-wrapper > .button-container a.button {
+  background-color: var(--vb-blue);
+  color: #fff;
+  border: none;
+  padding: 12px 32px;
+  font-size: var(--body-font-size-s);
+}
+
+/* "Unsere aktuellen Themen" heading below hero */
+main > .section:first-of-type > .default-content-wrapper > h2:last-child {
+  color: var(--text-color);
+  text-align: center;
+  margin-top: 48px;
+  padding: 0 24px;
+  font-size: var(--heading-font-size-l);
+}
+
+/* CTA section — "Wir sind für Sie da" */
+main .section.cta-section {
+  background-color: var(--light-color);
+  margin: 0;
+  padding: 48px 24px;
+}
+
+main .section.cta-section .default-content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+main .section.cta-section .default-content-wrapper > h2:first-child {
+  text-align: center;
+  font-size: var(--heading-font-size-xl);
+  margin-bottom: 32px;
+}
+
 main .section.cta-section .cards > ul {
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;

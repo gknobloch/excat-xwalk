@@ -1,121 +1,150 @@
 footer {
   font-size: var(--body-font-size-xs);
+  font-family: var(--body-font-family);
 }
 
-footer .footer p {
-  margin: 0;
-}
-
-/* First section: dark blue with Filialsuche, links, social */
-footer .footer > div > .section:first-child {
+footer .footer-links {
   background-color: var(--vb-dark-blue);
   color: #fff;
-  text-align: center;
-  padding: 40px 24px 32px;
-}
-
-footer .footer > div > .section:first-child .default-content-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Filialsuche button */
-footer .footer > div > .section:first-child .default-content-wrapper > p:first-child {
-  margin: 0 0 24px;
-}
-
-footer .footer > div > .section:first-child .default-content-wrapper > p:first-child a {
-  display: inline-block;
-  border: 2px solid rgb(255 255 255 / 40%);
-  border-radius: 28px;
-  padding: 12px 40px;
-  color: #fff;
-  font-size: var(--body-font-size-s);
-  font-weight: 500;
-  text-decoration: none;
-  transition: border-color 0.2s;
-}
-
-footer .footer > div > .section:first-child .default-content-wrapper > p:first-child a:hover {
-  border-color: #fff;
-  color: #fff;
-}
-
-/* Legal links: horizontal row with dot separators */
-footer .footer > div > .section:first-child ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 24px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 4px 8px;
-}
-
-footer .footer > div > .section:first-child ul li:not(:last-child)::after {
-  content: '\00B7';
-  margin-left: 8px;
-  color: rgb(255 255 255 / 60%);
-}
-
-/* stylelint-disable-next-line no-descending-specificity */
-footer .footer > div > .section:first-child ul a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* stylelint-disable-next-line no-descending-specificity */
-footer .footer > div > .section:first-child ul a:hover {
-  text-decoration: underline;
-  color: #fff;
-}
-
-/* Social links row */
-footer .footer > div > .section:first-child .default-content-wrapper > p:nth-child(3) {
-  margin: 0 0 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-}
-
-/* stylelint-disable-next-line no-descending-specificity */
-footer .footer > div > .section:first-child .default-content-wrapper > p:nth-child(3) a {
-  color: #fff;
-  font-weight: 500;
-}
-
-/* Cookie settings link */
-footer .footer > div > .section:first-child .default-content-wrapper > p:last-child {
-  margin: 0;
-}
-
-/* stylelint-disable-next-line no-descending-specificity */
-footer .footer > div > .section:first-child .default-content-wrapper > p:last-child a {
-  color: #fff;
-  font-weight: 500;
-}
-
-/* Second section: light gray with partner logos */
-footer .footer > div > .section:last-child {
-  background-color: var(--light-color);
-  text-align: center;
   padding: 32px 24px;
 }
 
-footer .footer > div > .section:last-child .default-content-wrapper {
+footer .footer-links .default-content-wrapper {
+  margin: auto;
   max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-footer .footer > div > .section:last-child .default-content-wrapper > p:first-child {
+/* Filialsuche pill button */
+footer .footer-filialsuche {
   margin: 0 0 24px;
-  color: var(--dark-color);
+}
+
+footer .footer-filialsuche a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: var(--body-font-size-s);
+  border: 1px solid rgba(255 255 255 / 0.5);
+  border-radius: 20px;
+  padding: 8px 24px;
+  transition: border-color 0.2s;
+}
+
+footer .footer-filialsuche a:hover {
+  border-color: #fff;
+}
+
+footer .footer-filialsuche img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+}
+
+/* legal links row */
+footer .footer-links ul {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 0;
+  justify-content: center;
+}
+
+footer .footer-links ul li:not(:last-child)::after {
+  content: '·';
+  margin: 0 10px;
+  opacity: 0.7;
+}
+
+footer .footer-links ul a {
+  color: #fff;
+  text-decoration: none;
   font-size: var(--body-font-size-xs);
 }
 
-/* Partner logos row */
-footer .footer > div > .section:last-child .default-content-wrapper > p:last-child {
+footer .footer-links ul a:hover {
+  text-decoration: underline;
+}
+
+/* social icons row */
+footer .footer-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 24px;
+  justify-content: center;
+}
+
+footer .footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+footer .footer-social-link:hover {
+  opacity: 1;
+}
+
+footer .footer-social-link img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+/* cookie settings link — own row */
+footer .footer-cookie {
+  margin: 0;
+  text-align: center;
+}
+
+footer .footer-cookie-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: var(--body-font-size-xs);
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+footer .footer-cookie-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Partners section */
+footer .footer-partners {
+  background-color: #fff;
+  padding: 32px 24px;
+}
+
+footer .footer-partners .default-content-wrapper {
+  margin: auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+footer .footer-partners p:first-child {
+  color: var(--dark-color);
+  font-size: var(--body-font-size-xs);
+  margin-bottom: 20px;
+}
+
+footer .footer-partners p:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -129,12 +158,17 @@ footer .footer > div > .section:last-child .default-content-wrapper > p:last-chi
   width: auto;
 }
 
-@media (width >= 900px) {
-  footer .footer > div > .section:first-child {
-    padding: 48px 32px 40px;
-  }
+footer .footer-partners img {
+  max-width: 100px;
+  max-height: 32px;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+}
 
-  footer .footer > div > .section:last-child {
-    padding: 40px 32px;
+@media (width >= 900px) {
+  footer .footer-links,
+  footer .footer-partners {
+    padding: 32px;
   }
 }
