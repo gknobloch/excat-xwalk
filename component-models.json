@@ -181,6 +181,12 @@
         "valueType": "string",
         "name": "content_link",
         "label": "Card Link"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "content_description",
+        "label": "Card Description"
       }
     ]
   },
