@@ -43,10 +43,16 @@
           "multi": false
         },
         {
+          "component": "text",
+          "valueType": "string",
+          "name": "content_title",
+          "label": "Card Title"
+        },
+        {
           "component": "aem-content",
           "valueType": "string",
-          "name": "content_titleLink",
-          "label": "Card Content"
+          "name": "content_link",
+          "label": "Card Link"
         }
       ]
     }

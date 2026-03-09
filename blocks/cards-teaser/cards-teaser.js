@@ -63,19 +63,37 @@ export default function decorate(block) {
       } else {
         div.className = 'cards-teaser-card-body';
         // Transform xwalk output into semantic HTML.
-        // xwalk renders: <p><a href="path">Title</a></p>
-        // We need:       <h2><a href="path">Title</a></h2>
+        // xwalk renders: <p>title</p> <p><a href="url">url</a></p>
+        // We need:       <h2><a href="url">title</a></h2>
         if (!div.querySelector('h2')) {
-          const firstP = div.querySelector('p');
-          if (firstP) {
-            const link = firstP.querySelector('a');
+          const children = [...div.children];
+          if (children.length >= 2) {
+            const titleP = children[0];
+            const linkP = children[1];
+            const link = linkP.querySelector('a');
+            const h2 = document.createElement('h2');
+            if (link) {
+              const a = document.createElement('a');
+              a.href = link.href;
+              a.textContent = titleP.textContent;
+              h2.append(a);
+              titleP.remove();
+              linkP.remove();
+            } else {
+              h2.textContent = titleP.textContent;
+              titleP.remove();
+            }
+            div.prepend(h2);
+          } else if (children.length === 1) {
+            const titleP = children[0];
+            const link = titleP.querySelector('a');
             const h2 = document.createElement('h2');
             if (link) {
               h2.append(link);
             } else {
-              h2.textContent = firstP.textContent;
+              h2.textContent = titleP.textContent;
             }
-            firstP.replaceWith(h2);
+            titleP.replaceWith(h2);
           }
         }
       }
