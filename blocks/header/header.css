@@ -19,7 +19,6 @@ header .header {
 
 .nav-bar ul {
   list-style: none;
-  margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -43,7 +42,7 @@ header .header {
 }
 
 .nav-bar ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgb(255 255 255 / 10%);
   color: #fff;
   text-decoration: none;
 }
@@ -53,9 +52,6 @@ header .header {
   background-color: #fff;
   width: 100%;
   border-bottom: 1px solid #e8e8e8;
-}
-
-.brand-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -69,6 +65,7 @@ header .header {
   margin: 0;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .brand-logo a {
   display: inline-flex;
   align-items: center;
